@@ -41,7 +41,7 @@ def go(config: DictConfig):
                 f"{config['main']['components_repository']}/get_data",
                 # Entry point to call
                 entry_point = "main",
-                version ='main,
+                version ='main',
                 # Parameters for that entry point
                 parameters={
                     "sample": config["etl"]["sample"],
