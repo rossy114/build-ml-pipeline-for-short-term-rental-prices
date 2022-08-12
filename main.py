@@ -40,8 +40,8 @@ def go(config: DictConfig):
             _ = mlflow.run(
                 f"{config['main']['components_repository']}/get_data",
                 # Entry point to call
-                entry_point= ="main",
-                version='main,
+                entry_point = "main",
+                version ='main,
                 # Parameters for that entry point
                 parameters={
                     "sample": config["etl"]["sample"],
@@ -55,7 +55,7 @@ def go(config: DictConfig):
         if "basic_cleaning" in active_steps:
             _ = mlflow.run(os.path.join(hydra.utils.get_original_cwd(), "src", "basic_cleaning"),
                 # Entry point to call
-                entry_point= ="main",
+                entry_point = "main",
                 # Parameters for that entry point
                 parameters={
                     "input_artifact": "sample.csv:latest",
