@@ -73,7 +73,7 @@ def go(config: DictConfig):
                 entry_point = "main",
                 # Parameters for that entry point
                 parameters={
-                    "input_artifact": "clean_sample.csv:latest",
+                    "csv": "clean_sample.csv:latest",
                     "ref": "clean_sample.csv:reference",
                     "output_type": "clean_sample",
                     "output_description": "Data with outliers and null values removed",
