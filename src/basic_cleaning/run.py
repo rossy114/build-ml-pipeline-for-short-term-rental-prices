@@ -98,7 +98,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "--max_price", 
         type= float,
-        help= "The maximum price to consider"
+        help= "The maximum price to consider",
         required=True
     )
 
