@@ -44,12 +44,11 @@ def go(args):
     df.to_csv("clean_sample.csv", index=False)
 
     artifact = wandb.Artifact(
-        name=args.artifact_name,
-        type=args.artifact_type,
-        description=args.artifact_description,
+        args.output_artifact,
+        type=args.output_type,
+        description=args.output_description,
     )
-    artifact.add_file(filename)
-
+    artifact.add_file("clean_sample.csv")
     logger.info("Logging artifact")
     run.log_artifact(artifact)
 
