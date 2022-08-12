@@ -63,35 +63,35 @@ if __name__ == "__main__":
     parser.add_argument(
         "--input_artifact", 
         type= str,
-        help= "The input artifact which is the sample.csv"
+        help= "The input artifact which is the sample.csv",
         required=True
     )
 
     parser.add_argument(
         "--output_artifact", 
         type= str,
-        help= "The output artifact "
+        help= "The output artifact",
         required=True
     )
 
     parser.add_argument(
         "--output_type", 
         type= str,
-        help= "csv file format"
+        help= "csv file format",
         required=True
     )
 
     parser.add_argument(
         "--output_description", 
         type= str,
-        help= "The output artifact output_description"
+        help= "The output artifact output_description",
         required=True
     )
 
     parser.add_argument(
         "--min_price", 
         type= float,
-        help= "The minimum price to consider"
+        help= "The minimum price to consider",
         required=True
     )
 
