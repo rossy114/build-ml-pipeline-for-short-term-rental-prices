@@ -68,11 +68,8 @@ def test_row_count(data):
     Test price between min and max is same as price
     """
 def test_price_range(data, min_price, max_price):
-    assert data['price']=data['price'].between(min_price, max_price)
+    assert data['price']==data['price'].between(min_price, max_price)
     # assert data['price'].between(float(min_price), float(max_price))
-    idx = data['price'] & data['price'].between(min_price, max_price)
-
-    assert np.sum(~idx) == 0
 
 
 
