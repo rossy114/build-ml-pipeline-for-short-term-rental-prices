@@ -65,10 +65,10 @@ def test_row_count(data):
 
 # def test_price_range(data: pd.DataFrame, min_price, max_price):
     """
-    Test price between min and max is same as price
+    Test price between min and max
     """
 def test_price_range(data, min_price, max_price):
-    assert data['price']==data['price'].between(min_price, max_price)
+    assert data['price'].between(min_price, max_price).all()
     # assert data['price'].between(float(min_price), float(max_price))
 
 
