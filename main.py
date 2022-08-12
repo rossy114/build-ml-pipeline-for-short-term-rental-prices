@@ -68,17 +68,19 @@ def go(config: DictConfig):
             )
 
         if "data_check" in active_steps:
-             _ = mlflow.run(os.path.join(hydra.utils.get_original_cwd(), "src", "basic_cleaning"),
+             _ = mlflow.run(os.path.join(hydra.utils.get_original_cwd(), "src", "data_check"),
                 # Entry point to call
                 entry_point = "main",
                 # Parameters for that entry point
                 parameters={
                     "csv": "clean_sample.csv:latest",
                     "ref": "clean_sample.csv:reference",
-                    "output_type": "clean_sample",
-                    "output_description": "Data with outliers and null values removed",
-                    "min_price": config['etl']['min_price'],
-                    "max_price": config['etl']['max_price']
+                    "kl_threshold": "config['data_check']['kl_threshold']"
+"
+                    # "output_type": "clean_sample",
+                    # "output_description": "Data with outliers and null values removed",
+                    # "min_price": config['etl']['min_price'],
+                    # "max_price": config['etl']['max_price']
                 },
             )
 
