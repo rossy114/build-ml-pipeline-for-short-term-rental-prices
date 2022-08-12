@@ -6,28 +6,28 @@ entry_points:
     parameters:
 
       input_artifact:
-        description: ## ADD DESCRIPTION
-        type: string
+        description: The input artifact which is the sample.csv
+        type: str
 
       output_artifact:
-        description: ## ADD DESCRIPTION
-        type: string
+        description: The output artifact 
+        type: str
 
       output_type:
-        description: ## ADD DESCRIPTION
-        type: string
+        description: csv file format
+        type: str
 
       output_description:
-        description: ## ADD DESCRIPTION
-        type: string
+        description: The output artifact is a cleaned version of in input artifact called cleaned.csv 
+        type: str
 
       min_price:
-        description: ## ADD DESCRIPTION
-        type: string
+        description: The minimum price to consider
+        type: float
 
       max_price:
-        description: ## ADD DESCRIPTION
-        type: string
+        description: The maximum price to consider
+        type: float
 
 
     command: >-
