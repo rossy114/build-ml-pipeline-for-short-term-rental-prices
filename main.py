@@ -76,7 +76,6 @@ def go(config: DictConfig):
                     "csv": "clean_sample.csv:latest",
                     "ref": "clean_sample.csv:reference",
                     "kl_threshold": "config['data_check']['kl_threshold']"
-"
                     # "output_type": "clean_sample",
                     # "output_description": "Data with outliers and null values removed",
                     # "min_price": config['etl']['min_price'],
