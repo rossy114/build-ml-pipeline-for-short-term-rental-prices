@@ -65,11 +65,3 @@ def test_row_count(data):
 
 def test_price_range(data, min_price, max_price):
     assert data['price'].between(float(min_price), float(max_price)
-
-
-
-
-
-
-
-
