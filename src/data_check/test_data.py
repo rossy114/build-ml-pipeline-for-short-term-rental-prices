@@ -54,7 +54,6 @@ def test_similar_neigh_distrib(data: pd.DataFrame, ref_data: pd.DataFrame, kl_th
     Apply a threshold on the KL divergence to detect if the distribution of the new data is
     significantly different than that of the reference dataset
     """
-    kl_threshold: 0.2
     dist1 = data['neighbourhood_group'].value_counts().sort_index()
     dist2 = ref_data['neighbourhood_group'].value_counts().sort_index()
 
