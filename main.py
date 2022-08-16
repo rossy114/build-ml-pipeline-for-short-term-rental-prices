@@ -85,6 +85,7 @@ def go(config: DictConfig):
             _ = mlflow.run(f"{config['main']['components_repository']}/train_val_test_split",
                 #Entry point to call
                 entry_point = 'main',
+                version="main",
                 # Parameters for that entry point
                 parameters={
                     "input": "clean_sample.csv:latest", 
