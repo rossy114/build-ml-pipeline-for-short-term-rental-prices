@@ -32,10 +32,6 @@ entry_points:
         description: Maximum number of words to consider for the TFIDF
         type: string
 
-      max_features:
-        description: Maximum number of features
-        type: string
-
       output_artifact:
         description: Name for the output artifact
         type: string
@@ -47,5 +43,4 @@ entry_points:
                     --stratify_by {stratify_by} \
                     --rf_config {rf_config} \
                     --max_tfidf_features {max_tfidf_features} \
-                    --max_features {max_features} \
                     --output_artifact {output_artifact}

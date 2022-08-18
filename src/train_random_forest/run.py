@@ -274,6 +274,13 @@ if __name__ == "__main__":
         type=int
     )
 
+    # parser.add_argument(
+    #     "--max_features",
+    #     help="Maximum number of features",
+    #     default=0.5,
+    #     type=float
+    # )
+
     parser.add_argument(
         "--output_artifact",
         type=str,
