@@ -29,7 +29,7 @@ def go(args):
     # Download test dataset
     test_dataset_path = run.use_artifact(args.test_dataset).file()
 
-    # Read test dataset
+    # Read the test dataset
     X_test = pd.read_csv(test_dataset_path)
     y_test = X_test.pop("price")
 
