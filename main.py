@@ -116,19 +116,21 @@ def go(config: DictConfig):
                     "stratify_by": config["modeling"]["stratify_by"],
                     "rf_config": rf_config,
                     "max_tfidf_features": config["modeling"]["max_tfidf_features"],
-                   # "max_features": config["modeling"]["random_forest"]["max_features"],
                     "output_artifact": "random_forest_export"
                 }
             )
 
 
         if "test_regression_model" in active_steps:
-
-            ##################
-            # Implement here #
-            ##################
-
-            pass
+            _ = mlflow.run(f"{config['main']['components_repository']}/test_regression_model",
+                #Entry point to call
+                entry_point = 'main',
+                # Parameters for that entry point
+                parameters={
+                    "mlflow_model": "random_forest_export:prod",
+                    "test_dataset": "test_data.csv:latest",
+                }
+            )
 
 
 if __name__ == "__main__":

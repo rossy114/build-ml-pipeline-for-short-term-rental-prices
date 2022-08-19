@@ -176,9 +176,6 @@ def get_inference_pipeline(rf_config, max_tfidf_features):
     zero_imputer = SimpleImputer(strategy="constant", fill_value=0)
 
     # A MINIMAL FEATURE ENGINEERING step:
-    # we create a feature that represents the number of days passed since the last review
-    # First we impute the missing review date with an old date (because there hasn't been
-    # a review for a long time), and then we create a new feature from it,
     date_imputer = make_pipeline(
         SimpleImputer(strategy='constant', fill_value='2010-01-01'),
         FunctionTransformer(delta_date_feature, check_inverse=False, validate=False)
@@ -196,7 +193,6 @@ def get_inference_pipeline(rf_config, max_tfidf_features):
         ),
     )
 
-    # Let's put everything together
     preprocessor = ColumnTransformer(
         transformers=[
             ("ordinal_cat", ordinal_categorical_preproc, ordinal_categorical),
@@ -213,11 +209,6 @@ def get_inference_pipeline(rf_config, max_tfidf_features):
     # Create random forest
     random_Forest = RandomForestRegressor(**rf_config)
 
-    ######################################
-    # Create the inference pipeline. The pipeline must have 2 steps: a step called "preprocessor" applying the
-    # ColumnTransformer instance that we saved in the `preprocessor` variable, and a step called "random_forest"
-    # with the random forest instance that we just saved in the `random_forest` variable.
-    # HINT: Use the explicit Pipeline constructor so you can assign the names to the steps, do not use make_pipeline
     sk_pipe = Pipeline(
         steps=[
             ("preprocessor", preprocessor),
@@ -273,13 +264,6 @@ if __name__ == "__main__":
         default=10,
         type=int
     )
-
-    # parser.add_argument(
-    #     "--max_features",
-    #     help="Maximum number of features",
-    #     default=0.5,
-    #     type=float
-    # )
 
     parser.add_argument(
         "--output_artifact",
